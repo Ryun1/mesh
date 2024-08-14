@@ -82,6 +82,7 @@ export class BrowserWallet implements IInitiator, ISigner, ISubmitter {
    * - A name is provided to display wallet's name on the user interface.
    * - A version is provided to display wallet's version on the user interface.
    * - An icon is provided to display wallet's icon on the user interface.
+   * - A list of CIP30 extensions that hte wallet supported.
    *
    * @returns a list of wallet names
    */
@@ -93,6 +94,9 @@ export class BrowserWallet implements IInitiator, ISigner, ISubmitter {
     for (const key in window.cardano) {
       try {
         const _wallet = window.cardano[key];
+        let extensions = window.cardano[key]?.supportedExtensions
+        if (extensions) continue;
+        else extensions = [];
         if (_wallet === undefined) continue;
         if (_wallet.name === undefined) continue;
         if (_wallet.icon === undefined) continue;
@@ -102,6 +106,7 @@ export class BrowserWallet implements IInitiator, ISigner, ISubmitter {
           name: key == "nufiSnap" ? "MetaMask" : _wallet.name,
           icon: _wallet.icon,
           version: _wallet.apiVersion,
+          extensions: extensions
         });
       } catch (e) {}
     }
