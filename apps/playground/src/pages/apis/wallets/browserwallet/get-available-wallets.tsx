@@ -28,6 +28,7 @@ function Left() {
   example += `    "name": "eternl",\n`;
   example += `    "icon": "data:image/png;base64,ICONBASE64HERE",\n`;
   example += `    "version": "0.1.0"\n`;
+  example += `    "extensions": [{ cip: 95 }] \n`;
   example += `  }\n`;
   example += `]\n`;
 
@@ -42,11 +43,14 @@ function Left() {
           A name is provided to display wallet's name on the user interface.
         </li>
         <li>
+          An icon is provided to display wallet's icon on the user interface.
+        </li>
+        <li>
           A version is provided to display wallet's version on the user
           interface.
         </li>
         <li>
-          An icon is provided to display wallet's icon on the user interface.
+          A array of supported CIP-30 extensions.
         </li>
       </ul>
       <p>Example:</p>
