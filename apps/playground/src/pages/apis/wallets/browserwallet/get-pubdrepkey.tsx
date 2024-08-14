@@ -26,8 +26,8 @@ function Left() {
   return (
     <>
       <p>
-        Get the key, hash, and bech32 encoding of the DRep ID. The DRep ID is a
-        unique identifier for the user&apos;s wallet.
+      Get the DRep public key, public key hash (DRep ID), and bech32 encoding of
+       the DRep key hash
       </p>
       <p>Example:</p>
       <Codeblock data={codeSample} />
@@ -44,8 +44,9 @@ function Right() {
   }
   return (
     <LiveCodeDemo
-      title="Get DRep ID Key"
-      subtitle="Get the key, hash, and bech32 address of the DRep ID"
+      title="Get public DRep Key"
+      subtitle="Get the DRep public key, public key hash (DRep ID), and bech32 
+      encoding of the DRep key hash"
       code={`await wallet.getPubDRepKey();`}
       runCodeFunction={runDemo}
       disabled={!connected}

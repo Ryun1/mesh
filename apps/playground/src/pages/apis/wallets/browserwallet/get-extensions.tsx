@@ -42,7 +42,7 @@ function Right() {
   return (
     <LiveCodeDemo
       title="Get Extensions"
-      subtitle="Get a list of CIPs that are supported by the connected wallet"
+      subtitle="Get a list of CIP-30 extensions that have been enabled by the connected wallet"
       code={`await wallet.getExtensions();`}
       runCodeFunction={runDemo}
       disabled={!connected}
